@@ -1,0 +1,160 @@
+<!doctype html>
+
+<html class="">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Asset Track </title>
+<link rel="shortcut icon" href="images/icon.png">
+<link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<link href="styles/all.min.css" rel="stylesheet" type="text/css">
+<script src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/1.7.2jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
+		preloader: false,
+		
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+
+	$('.popup-with-move-anim').magnificPopup({
+		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
+		preloader: false,
+		
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-slide-bottom'
+	});
+});
+</script>
+
+</head>
+
+<body style="background-color:#1d1d23">
+
+<!-- gridcontainer clearfix starts from here -->
+<div class="gridContainer clearfix">
+
+	<!-- groupname_header starts from here -->
+	<div class="groupname_header"> 
+    	<div class="arrow"> <img src="images/arrow_small.png"></div>
+    	Add Asset
+        <div class="header_btns">
+            <div class="menu_icon"> <img src="images/power.png"> </div>
+        </div>
+    </div>
+    <!-- groupname_header ends here -->
+
+
+    <!-- menu bar starts from here -->
+    <div class="menu">
+    	<div class="menu_btn1">
+        	<img src="images/dashboard.png"> <br><br> <span style="color:#FFF"> Dashboard </span>
+        </div>
+        <div class="menu_btn2">
+        	<img src="images/assets.png"> <br><br> My Assets
+        </div>
+        <div class="menu_btn3">
+        	<img src="images/search.png"> <br><br> Search Assets
+        </div>
+        <div class="menu_btn4">
+        	<img src="images/import.png"> <br><br> Import/Export
+        </div>
+        <div class="menu_btn5">
+        	<img src="images/manage.png"> <br><br> Manage Users
+        </div>
+    </div>
+	<!-- menu bar ends here -->
+    
+    
+    <!-- content box starts from here -->
+    <div class="box_group">
+        <input type="text" class="txt_box8"c placeholder="Group">
+       
+        <a href="#">
+            <div class="addgroup">
+            <div class="addgrp"><b>Add Group</b></div>
+            <div class="addgrp2"><img src="images/menu.png"></div>
+            </div>
+        </a>  
+         
+        <input type="text" class="txt_box9" placeholder="Name">
+        <input type="text" class="txt_box10" placeholder="S/N">
+        <input type="text" class="txt_box11" placeholder="Date of Purchase">
+        
+        <a href="#">
+            <div class="addgroup">
+            <div class="addgrp"><b>Add Photos</b></div> 
+            <div class="addgrp2"><img src="images/camera.png"></div>
+            </div>
+        </a>
+        
+        <div class="addgroup2">
+        <img src="images/tick.png"> &nbsp; <b>Use Geolocation</b>
+        </div>
+        <a class="popup-with-move-anim" href="#small-dialog">
+        <div class="addgroup3"><b>Save</b></div>
+        </a>
+	</div>
+    <!-- content box ends here -->
+    
+    
+    <!-- PopUp menu (small_dialog) box Starts from here -->
+	<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+    
+        <div class="popup_mainbox">
+        
+        	<div class="popup_maintext"> <b>Add Group</b> </div>
+            
+            <div class="text_box12main"> 
+            <input type="text" class="txt_box12" placeholder="Group"> 
+            </div>
+            
+            <div class="agree_one">
+            	<img src="images/agree_1.png"> &nbsp; <b>Need Additional Information</b>
+            </div>
+            
+            <div class="agree_one">
+            	<img src="images/agree_2.png"> &nbsp; <b>Need authentication</b>
+            </div>
+            
+            <div class="agree_one">
+            	<img src="images/agree_1.png"> &nbsp; <b>Redirect to URL</b>
+            </div>
+            
+            <div class="agree_one">
+            	<img src="images/agree_2.png"> &nbsp; <b>Propose use last location</b>
+            </div>
+            
+            <div class="popup_save"><b>Add</b></div>
+        </div>   
+    </div>
+    <!-- PopUp menu (small_dialog) box ends here -->
+
+</div>
+<!-- gridcontainer clearfix ends here -->
+</body>
+</html>
