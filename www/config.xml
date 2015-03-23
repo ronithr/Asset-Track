@@ -5,14 +5,14 @@
         id        = "com.phonegap.hello-world"
         version   = "1.0.0">
 
-  <name>Europ Assist</name>
+  <name>Asset-Track</name>
 
   <description>
-    Europ Assists iPhone and iPad Application
+    Asset-Track Application
   </description>
 
   <author href="http://phonegap.com" email="support@phonegap.com">
-    Starsoft
+    Star-Knowledge
   </author>
 
   <!--
