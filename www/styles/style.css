@@ -78,14 +78,13 @@ img, object, embed, video {
 }
 .emailbox {
 	width:80%;
-	height:120px;
 	margin-left:10%;
 	margin-top:3%;
 	margin-bottom:5%;
 }
 .txt_box1 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -107,7 +106,7 @@ img, object, embed, video {
 }
 .txt_box2 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -129,7 +128,7 @@ img, object, embed, video {
 }
 .txt_box3 {
 	float: left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -151,7 +150,7 @@ img, object, embed, video {
 }
 .txt_box4 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -173,7 +172,7 @@ img, object, embed, video {
 }
 .txt_box5 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -195,7 +194,7 @@ img, object, embed, video {
 }
 .txt_box6 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -217,7 +216,7 @@ img, object, embed, video {
 }
 .txt_box7 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 5%;
@@ -239,19 +238,21 @@ img, object, embed, video {
 }
 .signinbox {
 	float:left;
-	width:79%;
-	height:40px;
-	margin-left:10%;
-	margin-top:3%;
-	margin-bottom:5%;
+	width:100%;
+	height:50px;
+	margin-left:auto;
+	margin-top:5%;
+	margin-bottom:2%;
 	background-color:#03bdd9;
 	border-radius:3px;
 	text-align:center;
 	color:#FFF;
-	padding-top:3%;
+	padding-top:0%;
 	padding-bottom:0%;
 	font-size:1.5em;
 	font-family:Bakersfield;
+	font-weight:bolder;
+	border:none;
 }
 .footer {
 	float:left;
@@ -698,11 +699,11 @@ img, object, embed, video {
 	color: #FFF;
 	font-family:Bakersfield;
 	font-size:1.5em;
+	font-weight:bolder;
 	height: 42px;
 	border-radius:3px;
 	border:none;
-	text-align:center;
-	padding-top:5%;
+	text-align:center;	
 }
 
 
@@ -764,12 +765,11 @@ img, object, embed, video {
 	color: #FFF;
 	font-family:Bakersfield;
 	font-size:1.2em;
-	height: 35px;
+	font-weight:bolder;
+	height: 40px;
 	border-radius:3px;
 	border:none;
 	text-align:center;
-	padding-top:5%;
-	cursor:pointer;
 }
 
 
@@ -806,14 +806,13 @@ img, object, embed, video {
 }
 .emailbox {
 	width:50%;
-	height:120px;
 	margin-left:25%;
 	margin-top:3%;
 	margin-bottom:2%;
 }
 .txt_box1 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 1%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -835,7 +834,7 @@ img, object, embed, video {
 }
 .txt_box2 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 1%;
 	margin-right: 0%;
 	margin-bottom: 0%;
@@ -857,7 +856,7 @@ img, object, embed, video {
 }
 .txt_box3 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -879,7 +878,7 @@ img, object, embed, video {
 }
 .txt_box4 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -901,7 +900,7 @@ img, object, embed, video {
 }
 .txt_box5 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -923,7 +922,7 @@ img, object, embed, video {
 }
 .txt_box6 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 2%;
@@ -945,7 +944,7 @@ img, object, embed, video {
 }
 .txt_box7 {
 	float:left;
-	width: 80%;
+	width: 78%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 5%;
@@ -967,19 +966,21 @@ img, object, embed, video {
 }
 .signinbox {
 	float:left;
-	width:49.5%;
-	height:38px;
-	margin-left:25%;
-	margin-top:3%;
-	margin-bottom:5%;
+	width:100%;
+	height:50px;
+	margin-left:auto;
+	margin-top:5%;
+	margin-bottom:2%;
 	background-color:#03bdd9;
 	border-radius:3px;
 	text-align:center;
 	color:#FFF;
-	padding-top:2%;
+	padding-top:0%;
 	padding-bottom:0%;
 	font-size:1.5em;
 	font-family:Bakersfield;
+	font-weight:bolder;
+	border:none;
 }
 .footer {
 	float:left;
@@ -1421,11 +1422,11 @@ img, object, embed, video {
 	color: #FFF;
 	font-family:Bakersfield;
 	font-size:1.5em;
+	font-weight:bolder;
 	height: 40px;
 	border-radius:3px;
 	border:none;
 	text-align:center;
-	padding-top:3.5%;
 }
 
 
@@ -1487,12 +1488,11 @@ img, object, embed, video {
 	color: #FFF;
 	font-family:Bakersfield;
 	font-size:1.5em;
-	height: 40px;
+	font-weight:bolder;
+	height: 50px;
 	border-radius:3px;
 	border:none;
 	text-align:center;
-	padding-top:4%;
-	cursor:pointer;
 }
 
 
@@ -1536,7 +1536,6 @@ img, object, embed, video {
 }
 .emailbox {
 	width:40%;
-	height:120px;
 	margin-left:30%;
 	margin-top:3%;
 	margin-bottom:1%;
@@ -1698,21 +1697,21 @@ img, object, embed, video {
 }
 .signinbox {
 	float:left;
-	width:39.5%;
-	height:40px;
-	margin-left:30%;
-	margin-top:2%;
+	width:99%;
+	height:52px;
+	margin-left:auto;
+	margin-top:5%;
 	margin-bottom:2%;
 	background-color:#03bdd9;
 	border-radius:3px;
 	text-align:center;
 	color:#FFF;
-	padding-top:1%;
+	padding-top:0%;
 	padding-bottom:0%;
 	font-size:1.5em;
 	font-family:Bakersfield;
-	font-weight:200;
-
+	font-weight:bolder;
+	border:none;
 }
 .footer {
 	float:left;
@@ -2164,11 +2163,11 @@ img, object, embed, video {
 	color: #FFF;
 	font-family:Bakersfield;
 	font-size:1.5em;
-	height: 42px;
+	font-weight:bolder;
+	height: 52px;
 	border-radius:3px;
 	border:none;
 	text-align:center;
-	padding-top:1.5%;
 }
 
 
@@ -2230,12 +2229,11 @@ img, object, embed, video {
 	color: #FFF;
 	font-family:Bakersfield;
 	font-size:1.5em;
-	height: 40px;
+	font-weight:bolder;
+	height: 50px;
 	border-radius:3px;
 	border:none;
 	text-align:center;
-	padding-top:4%;
-	cursor:pointer;
 }
 
 

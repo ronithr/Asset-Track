@@ -15,6 +15,7 @@
 <script type="text/javascript" src="js/1.7.2jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 
+
 <script>
 $(document).ready(function() {
 	$('.popup-with-zoom-anim').magnificPopup({
@@ -60,7 +61,10 @@ $(document).ready(function() {
 
 	<!-- groupname_header starts from here -->
 	<div class="groupname_header"> 
-    	<div class="arrow"> <img src="images/arrow_small.png"></div>
+    	<a href="dashboard.html">
+    	<div class="arrow"> <img src="images/arrow.png"></div>
+        </a>
+        
     	Add Asset
         <div class="header_btns">
             <div class="menu_icon"> <img src="images/power.png"> </div>
@@ -69,55 +73,68 @@ $(document).ready(function() {
     <!-- groupname_header ends here -->
 
 
-    <!-- menu bar starts from here -->
+    <!-- menu starts from here -->
     <div class="menu">
+    	<a href="dashboard.html">
     	<div class="menu_btn1">
-        	<img src="images/dashboard.png"> <br><br> <span style="color:#FFF"> Dashboard </span>
+        	<img src="images/dashboard_blue.png"> <br><br> Dashboard
         </div>
+        </a>
+        
+        <a href="myassets.html">
         <div class="menu_btn2">
         	<img src="images/assets.png"> <br><br> My Assets
         </div>
+        </a>
+        
+        <a href="searchassets.html">
         <div class="menu_btn3">
         	<img src="images/search.png"> <br><br> Search Assets
         </div>
+        </a>
+        
+        <a href="addasset.html">
         <div class="menu_btn4">
-        	<img src="images/import.png"> <br><br> Import/Export
+        	<img src="images/import_white.png"> <br><br> <span style="color:#FFF">Import/Export</span>
         </div>
+        </a>
+        
+        <a href="#">
         <div class="menu_btn5">
         	<img src="images/manage.png"> <br><br> Manage Users
         </div>
+        </a>
+        
     </div>
-	<!-- menu bar ends here -->
+	<!-- menu ends here -->
     
     
     <!-- content box starts from here -->
     <div class="box_group">
         <input type="text" class="txt_box8"c placeholder="Group">
-       
-        <a href="#">
+       		
+            <a class="popup-with-move-anim" href="#small-dialog">
             <div class="addgroup">
             <div class="addgrp"><b>Add Group</b></div>
             <div class="addgrp2"><img src="images/menu.png"></div>
             </div>
-        </a>  
+            </a>
          
         <input type="text" class="txt_box9" placeholder="Name">
         <input type="text" class="txt_box10" placeholder="S/N">
         <input type="text" class="txt_box11" placeholder="Date of Purchase">
-        
-        <a href="#">
+
             <div class="addgroup">
             <div class="addgrp"><b>Add Photos</b></div> 
             <div class="addgrp2"><img src="images/camera.png"></div>
             </div>
-        </a>
-        
+
         <div class="addgroup2">
         <img src="images/tick.png"> &nbsp; <b>Use Geolocation</b>
         </div>
-        <a class="popup-with-move-anim" href="#small-dialog">
-        <div class="addgroup3"><b>Save</b></div>
-        </a>
+        
+        <input type="button" class="addgroup3" value="Save">
+  
 	</div>
     <!-- content box ends here -->
     
@@ -149,7 +166,8 @@ $(document).ready(function() {
             	<img src="images/agree_2.png"> &nbsp; <b>Propose use last location</b>
             </div>
             
-            <div class="popup_save"><b>Add</b></div>
+            <input type="button" class="popup_save" value="Add">
+            
         </div>   
     </div>
     <!-- PopUp menu (small_dialog) box ends here -->
