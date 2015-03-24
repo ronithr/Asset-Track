@@ -301,14 +301,14 @@ img, object, embed, video {
 	background-color:#FFF;
 	text-align:center;
 	color:#03bdd9;
-	font-size:1.5em;
+	font-size:1.2em;
 	padding-top:3%;
 	padding-left:24%;
 	font-family:Bakersfield;
 }
 .header_btns {
 	float:right;
-	width:19%;
+	width:26%;
 	margin-right:5%;
 }
 .menu_icon {
@@ -1025,14 +1025,14 @@ img, object, embed, video {
 	font-family:Bakersfield;
 }
 .dashboard_header {
-	width:85%;
+	width:80%;
 	height:40px;
 	background-color:#FFF;
 	text-align:center;
 	color:#03bdd9;
 	font-size:1.5em;
 	padding-top:2.5%;
-	padding-left:15%;
+	padding-left:20%;
 	font-family:Bakersfield;
 }
 .header_btns {
