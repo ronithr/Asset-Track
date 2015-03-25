@@ -11,7 +11,71 @@
 <link href="styles/style.css" rel="stylesheet" type="text/css">
 
 <script src="styles/respond.min.js"></script>
+
+<script src="js/1.7.2jquery.min.js"></script>
+  <!-- Load jQuery and the validate plugin -->
+<script src="js/jquery.validate.js"></script>
+  <!-- jQuery Form Validation code -->
+<script>
+  
+  // When the browser is ready...
+  $(function() {
+    // Setup form validation on the #register-form element
+     $("form").validate({
+                // Specify the validation rules
+                rules: {
+                    firstname: {
+                        required: true
+                    },
+                    lastname: {
+                        required: true
+                    },
+					email: {
+                        required: true
+                    },
+                    password: {
+                        required: true
+                    },
+					confirmpassword: {
+                        required: true
+                    }
+                },
+
+                // Specify the validation error messages
+                messages: {
+                    firstname: {
+                        required: "Please enter your Firstname"
+                    },
+					lastname: {
+                        required: "Please enter your Lastname"
+                    },
+
+			   email: {
+                        required: "Please enter username"
+                    },
+				
+                      password:{  required: "Please enter password"},
+					  confirmpassword:{  required: "Please re-enter password"}
+               },
+			   
+
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+           
+$("#btnSignUp").click(function () {
+              if ($("form").valid())
+				{
+				window.location ="dashboard.html";
+				}
+            });
+  });
+  
+  </script>
+
 </head>
+
 <body style="background-color:#1d1d23">
 <!-- gridcontainer clearfix starts from here -->
 <div class="gridContainer clearfix">
@@ -20,20 +84,36 @@
     	<img src="images/logo.png">
     </div>
     <div class="line" align="center"><img src="images/sep.png" width="90%"></div>
+    
     <form>
         <div class="emailbox">
-            <input type="text" class="txt_box3" placeholder="First Name">     
-            <input type="text" class="txt_box4" placeholder="Last Name">
-            <input type="text" class="txt_box5" placeholder="E-mail address">
-            <input type="text" class="txt_box6" placeholder="Password">
-            <input type="text" class="txt_box7" placeholder="Confirm Password">
-            <input type="button" class="signinbox" value="Sign up"> 
+            <div class="firstname">
+            <input name="firstname" type="text" class="txt_box3" placeholder="First Name">     
+            </div>
+            
+            <div class="lastname">
+            <input name="lastname" type="text" class="txt_box4" placeholder="Last Name">
+            </div>
+            
+            <div class="email">
+            <input name="email" type="text" class="txt_box5" placeholder="E-mail address">
+            </div>
+            
+            <div class="password">
+            <input name="password" type="password" class="txt_box6" placeholder="Password">
+            </div>
+            
+            <div class="password">
+            <input name="confirmpassword" type="password" class="txt_box7" placeholder="Confirm Password">
+            </div>
+            
+            <input id="btnSignUp" type="button" class="signinbox" value="Sign Up">
         </div>
     </form>
     
     <div class="footerpage2">
           <img src="images/agree.png"> &nbsp;&nbsp; Agree Terms and Condition<br><br>
-          <a href="#"> <span style="color:#03bdd9"> <u> Sign In </u> </span> </a> </div>
+          <a href="index.html"> <span style="color:#03bdd9"> <u> Sign In </u> </span> </a> </div>
     </div>
 
 </div>

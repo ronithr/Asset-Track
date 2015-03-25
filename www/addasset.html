@@ -12,10 +12,82 @@
 <link href="styles/style.css" rel="stylesheet" type="text/css">
 <link href="styles/all.min.css" rel="stylesheet" type="text/css">
 <script src="js/respond.min.js"></script>
-<script type="text/javascript" src="js/1.7.2jquery.min.js"></script>
+<script src="js/1.7.2jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 
 
+  <!-- Load jQuery and the validate plugin -->
+<script src="js/jquery.validate.js"></script>
+  <!-- jQuery Form Validation code -->
+  
+<script>
+  // When the browser is ready...
+  $(function() {
+    // Setup form validation on the #register-form element
+     $("form").validate({
+                // Specify the validation rules
+                rules: {
+                    Name: {
+                        required: true
+                    },
+                    numb: {
+                        required: true
+                    },
+					selectasset: {
+                        required: true
+                    },
+					purchasedate: {
+                        required: true
+                    },
+					choosefile: {
+                        required: true
+                    },
+
+                },
+
+                // Specify the validation error messages
+                messages: {
+                    Name: {
+                        required: "Please enter Name"
+                    },
+                    numb: {
+						required:"Please enter Serial Number"
+              		}, 
+					selectasset: {
+					  required: "select the asset"
+					},
+					purchasedate: {
+					  required: "Enter Purchase date"
+					},
+					choosefile: {
+					  required: "Choose File"
+					},
+
+              		},
+
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+           
+			$("#btnSignIn").click(function () {
+              if ($("form").valid())
+				{
+				window.location ="dashboard.html";
+				}
+            });
+			$("#btnAdd").click(function () {
+              if ($("form").valid())
+				{
+				window.location ="addasset.html";
+				}
+            });
+  });
+  
+  </script>
+
+
+<!-- popup js starts from here -->
 <script>
 $(document).ready(function() {
 	$('.popup-with-zoom-anim').magnificPopup({
@@ -49,8 +121,10 @@ $(document).ready(function() {
 		removalDelay: 300,
 		mainClass: 'my-mfp-slide-bottom'
 	});
+	
 });
 </script>
+<!-- popup js ends here -->
 
 </head>
 
@@ -111,43 +185,60 @@ $(document).ready(function() {
     
     <!-- content box starts from here -->
     <div class="box_group">
-        <input type="text" class="txt_box8"c placeholder="Group">
-       		
+       
+       		<form>
+       		 <select  class="dropdown_box8" name="selectasset"> 
+                <option value=""> Select Asset </option>
+                <option> Asset-1 </option>
+                <option> Asset-2 </option>
+                <option> Asset-3 </option>
+                <option> Asset-4 </option>
+                <option> Asset-5 </option>
+                <option> Asset-6 </option>
+                <option> Asset-7 </option>
+                <option> Asset-8 </option>
+             </select>
+             
             <a class="popup-with-move-anim" href="#small-dialog">
             <div class="addgroup">
             <div class="addgrp"><b>Add Group</b></div>
             <div class="addgrp2"><img src="images/menu.png"></div>
             </div>
             </a>
-         
-        <input type="text" class="txt_box9" placeholder="Name">
-        <input type="text" class="txt_box10" placeholder="S/N">
-        <input type="text" class="txt_box11" placeholder="Date of Purchase">
-
-            <div class="addgroup">
-            <div class="addgrp"><b>Add Photos</b></div> 
-            <div class="addgrp2"><img src="images/camera.png"></div>
-            </div>
+            
+                <div class="name">
+                <input name="Name" type="text" class="txt_box9" placeholder="Name">
+                </div>
+                
+                <div class="numb">
+                <input name="numb" type="text" class="txt_box10" placeholder="S/N">
+                </div>
+                
+                <input name="purchasedate" type="text" class="txt_box11" placeholder="Date of Purchase">
+            
+            	<input name="choosefile" class="addphotos" type="file" value="Add Photos">
+            </form>
 
         <div class="addgroup2">
         <img src="images/tick.png"> &nbsp; <b>Use Geolocation</b>
         </div>
         
-        <input type="button" class="addgroup3" value="Save">
+        <input id="btnSignIn" type="button" class="addgroup3" value="Save">
   
 	</div>
     <!-- content box ends here -->
     
     
-    <!-- PopUp menu (small_dialog) box Starts from here -->
+   <!-- PopUp menu (small_dialog) box Starts from here -->
 	<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
     
         <div class="popup_mainbox">
         
         	<div class="popup_maintext"> <b>Add Group</b> </div>
             
+            <form>
             <div class="text_box12main"> 
-            <input type="text" class="txt_box12" placeholder="Group"> 
+            <input name="entergroup" type="text" class="txt_box12" placeholder="Group"> 
             </div>
             
             <div class="agree_one">
@@ -166,7 +257,8 @@ $(document).ready(function() {
             	<img src="images/agree_2.png"> &nbsp; <b>Propose use last location</b>
             </div>
             
-            <input type="button" class="popup_save" value="Add">
+            <input id="btnAdd" type="button" class="popup_save" value="Add">
+            </form>
             
         </div>   
     </div>

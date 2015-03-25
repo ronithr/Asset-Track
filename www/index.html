@@ -10,8 +10,54 @@
 <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
 <link href="styles/style.css" rel="stylesheet" type="text/css">
 
+<script src="js/respond.min.js"></script>
 
-<script src="styles/respond.min.js"></script>
+<script src="js/1.7.2jquery.min.js"></script>
+  <!-- Load jQuery and the validate plugin -->
+<script src="js/jquery.validate.js"></script>
+  <!-- jQuery Form Validation code -->
+<script>
+  
+  // When the browser is ready...
+  $(function() {
+    // Setup form validation on the #register-form element
+     $("form").validate({
+                // Specify the validation rules
+                rules: {
+                    email: {
+                        required: true
+
+                    },
+                    password: {
+                        required: true
+
+                    },
+                },
+
+                // Specify the validation error messages
+                messages: {
+                    email: {
+                        required: "Please enter username"
+
+                    },
+                      password: "Please enter password"
+               },
+
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+           
+$("#btnSignIn").click(function () {
+              if ($("form").valid())
+				{
+				window.location ="dashboard.html";
+				}
+            });
+  });
+  
+  </script>
+
 </head>
 <body style="background-color:#1d1d23">
 
@@ -27,18 +73,22 @@
     	<img src="images/logo2.png">
     </div>
     
-    <form>
+    <form >
         <div class="emailbox">
-            <input type="text" class="txt_box1" placeholder="E-mail address">    
-            <input type="text" class="txt_box2" placeholder="***************">
+            <div class="email">
+            <input name="email" type="text" class="txt_box1" placeholder="Username">    
+            </div>
+            <div class="password">
+            <input name="password" type="password" class="txt_box2" placeholder="Password">
+            </div>
             
-            <a href="dashboard.html"> <input type="button" class="signinbox" value="Sign in"> </a> 
+          <input id="btnSignIn" type="button" class="signinbox" value="Sign in">
         </div>
     </form>
     
     <div class="footer">
           <div class="forgot">Forgot password?</div>
-          <div class="newhere">New here?<a href="#"> <span style="color:#03bdd9"> <u>Sign Up</u> </span> </a> </div>
+          <div class="newhere">New here? <a href="signup.html"><span style="color:#03bdd9"><u>Sign Up</u></span></a></div>
     </div>    
 
 </div>
