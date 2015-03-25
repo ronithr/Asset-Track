@@ -1,28 +1,28 @@
 
 /* fonts starts from here */
 @font-face {
-font-family: 'bakersfieldbold';   
-src: 	url('Bakersfield Bold-webfont.eot');
-src: 	url('Bakersfield Bold-webfont.eot?#iefix') format('embedded-opentype'),
-		url('Bakersfield Bold-webfont.woff2') format('woff2'),
-		url('Bakersfield Bold-webfont.woff') format('woff'),
-		url('Bakersfield Bold-webfont.ttf') format('truetype'),
-		url('Bakersfield Bold-webfont.svg#bakersfieldbold') format('svg');
-font-weight: normal;  
-font-style: normal;
+    font-family: 'bakersfieldbold';
+    src: url('Bakersfield Bold-webfont.eot');
+    src: url('Bakersfield Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Bakersfield Bold-webfont.woff2') format('woff2'),
+         url('Bakersfield Bold-webfont.woff') format('woff'),
+         url('Bakersfield Bold-webfont.ttf') format('truetype'),
+         url('Bakersfield Bold-webfont.svg#bakersfieldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-
 @font-face {
-font-family: 'bakersfieldlight';
-src: 	url('Bakersfield Light-webfont.eot'); 
-src: 	url('Bakersfield Light-webfont.eot?#iefix') format('embedded-opentype'),        
-		url('Bakersfield Light-webfont.woff2') format('woff2'),    
-		url('Bakersfield Light-webfont.woff') format('woff'),       
-		url('Bakersfield Light-webfont.ttf') format('truetype'),       
-		url('Bakersfield Light-webfont.svg#bakersfieldlight') format('svg');
-font-weight: normal;
-font-style: normal;
+    font-family: 'bakersfieldlight';
+    src: url('Bakersfield Light-webfont.eot');
+    src: url('Bakersfield Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Bakersfield Light-webfont.woff2') format('woff2'),
+         url('Bakersfield Light-webfont.woff') format('woff'),
+         url('Bakersfield Light-webfont.ttf') format('truetype'),
+         url('Bakersfield Light-webfont.svg#bakersfieldlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 /* fonts ends here */
 
@@ -64,6 +64,7 @@ img, object, embed, video {
 	width: 100%;
 	height:100%;
 }
+/* for index page from here */
 .logo {
 	width:50%;
 	margin-left:25%;
@@ -126,6 +127,8 @@ img, object, embed, video {
 	border-radius:3px;
 	border:none;
 }
+/* for index page ends here */
+
 .txt_box3 {
 	float: left;
 	width: 78%;
@@ -296,19 +299,19 @@ img, object, embed, video {
 	font-family:Bakersfield;
 }
 .dashboard_header {
-	width:80%;
+	width:75%;
 	height:40px;
 	background-color:#FFF;
 	text-align:center;
 	color:#03bdd9;
 	font-size:1.2em;
 	padding-top:3%;
-	padding-left:24%;
+	padding-left:25%;
 	font-family:Bakersfield;
 }
 .header_btns {
 	float:right;
-	width:26%;
+	width:20%;
 	margin-right:5%;
 }
 .menu_icon {
@@ -476,13 +479,14 @@ img, object, embed, video {
 	text-align:center;
 	color:#03bdd9;
 	font-size:1.2em;
+	font-weight:bold;
 	padding-top:3%;
 	padding-left:3%;
 	font-family:Bakersfield;
 }
 .arrow {
 	float:left;
-	margin-right:16%;
+	margin-right:22%;
 }
 .assetbox1 {
 	width:100%;
@@ -564,9 +568,9 @@ img, object, embed, video {
 	margin-top:3%;
 	margin-bottom:5%;
 }
-.txt_box8 {
+.dropdown_box8 {
 	float:left;
-	width: 80%;
+	width: 100%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 1%;
@@ -583,7 +587,7 @@ img, object, embed, video {
 	padding-bottom: 1%;
 	font-family:Bakersfield;
 	font-size: 15px;
-	height: 45px;
+	height: 55px;
 	border-radius:3px;
 	border:none;
 }
@@ -656,6 +660,25 @@ img, object, embed, video {
 	margin-left: 0%;
 	background-color:#2b445a;
 	color: #59606b;
+	font-family:Bakersfield;
+	font-size: 15px;
+	height: 52px;
+	border-radius:3px;
+	border:none;
+	text-align:center;
+}
+.addphotos {
+	float:left;
+	width: 100%;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-bottom: 1%;
+	margin-left: 0%;
+	background-color:#2b445a;
+	color: #59606b;
+	background-image:url(../images/calmera.png);
+	background-repeat:no-repeat;
+	background-position: 65% 50%;
 	font-family:Bakersfield;
 	font-size: 15px;
 	height: 52px;
@@ -1287,9 +1310,9 @@ img, object, embed, video {
 	margin-top:3%;
 	margin-bottom:5%;
 }
-.txt_box8 {
+.dropdown_box8 {
 	float:left;
-	width: 80%;
+	width: 100%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 1%;
@@ -1306,7 +1329,7 @@ img, object, embed, video {
 	padding-bottom: 1%;
 	font-family:Bakersfield;
 	font-size: 15px;
-	height: 45px;
+	height: 55px;
 	border-radius:3px;
 	border:none;
 }
@@ -1379,6 +1402,25 @@ img, object, embed, video {
 	margin-left: 0%;
 	background-color:#2b445a;
 	color: #59606b;
+	font-family:Bakersfield;
+	font-size: 15px;
+	height: 54px;
+	border-radius:3px;
+	border:none;
+	text-align:center;
+}
+.addphotos {
+	float:left;
+	width: 100%;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-bottom: 1%;
+	margin-left: 0%;
+	background-color:#2b445a;
+	color: #59606b;
+	background-image:url(../images/camera.png);
+	background-repeat:no-repeat;
+	background-position: 65% 50%;
 	font-family:Bakersfield;
 	font-size: 15px;
 	height: 54px;
@@ -1554,11 +1596,12 @@ img, object, embed, video {
 	background-image:url(../images/email.png);
 	background-repeat:no-repeat;
 	background-position: 5% 50%;
-	color: #59606b;
+	color: #6c7078;
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -1568,19 +1611,20 @@ img, object, embed, video {
 	width: 80%;
 	margin-top: 1%;
 	margin-right: 0%;
-	margin-bottom: 0%;
+	margin-bottom: 1%;
 	margin-left: 0%;
 	padding-left: 15%;
 	padding-right: 4%;
-	background-color:#2f3846;
+	background-color: #2f3846;
 	background-image:url(../images/pwrd.png);
 	background-repeat:no-repeat;
 	background-position: 5% 50%;
-	color: #59606b;
+	color: #6c7078;
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -1602,7 +1646,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -1624,7 +1669,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -1646,7 +1692,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -1668,7 +1715,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -1690,7 +1738,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -2027,9 +2076,9 @@ img, object, embed, video {
 	margin-top:3%;
 	margin-bottom:5%;
 }
-.txt_box8 {
+.dropdown_box8 {
 	float:left;
-	width: 80%;
+	width: 100%;
 	margin-top: 2%;
 	margin-right: 0%;
 	margin-bottom: 1%;
@@ -2045,8 +2094,9 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
-	height: 45px;
+	font-size: 16px;
+	font-weight:bold;
+	height: 60px;
 	border-radius:3px;
 	border:none;
 }
@@ -2064,7 +2114,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -2083,7 +2134,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -2105,7 +2157,8 @@ img, object, embed, video {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	font-family:Bakersfield;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight:bold;
 	height: 45px;
 	border-radius:3px;
 	border:none;
@@ -2122,7 +2175,27 @@ img, object, embed, video {
 	font-family:Bakersfield;
 	font-weight:bolder;
 	font-size: 15px;
-	height: 52px;
+	height: 60px;
+	border-radius:3px;
+	border:none;
+	text-align:center;
+}
+.addphotos {
+	float:left;
+	width: 100%;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-bottom: 1%;
+	margin-left: 0%;
+	background-color:#2b445a;
+	color: #59606b;
+	background-image:url(../images/camera.png);
+	background-repeat:no-repeat;
+	background-position: 55% 50%;
+	font-family:Bakersfield;
+	font-weight:bolder;
+	font-size: 15px;
+	height: 60px;
 	border-radius:3px;
 	border:none;
 	text-align:center;
@@ -2387,4 +2460,16 @@ img, object, embed, video {
 /* animate out */
 .my-mfp-slide-bottom.mfp-removing.mfp-bg {
 	opacity: 0;
+}
+
+
+
+
+
+label.error {
+color: #8e3747;
+padding-left: 10px;
+font-size: 16px;
+font-family: bakersfield;
+font-weight: bold;
 }
