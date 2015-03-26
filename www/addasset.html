@@ -19,6 +19,20 @@
   <!-- Load jQuery and the validate plugin -->
 <script src="js/jquery.validate.js"></script>
   <!-- jQuery Form Validation code -->
+
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+ 
+<script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+  
+  
   
 <script>
   // When the browser is ready...
@@ -76,12 +90,7 @@
 				window.location ="dashboard.html";
 				}
             });
-			$("#btnAdd").click(function () {
-              if ($("form").valid())
-				{
-				window.location ="addasset.html";
-				}
-            });
+
   });
   
   </script>
@@ -122,6 +131,11 @@ $(document).ready(function() {
 		mainClass: 'my-mfp-slide-bottom'
 	});
 	
+	$('#btnAdd').click(function(){
+		debugger;
+		$.magnificPopup.close();
+	});
+	
 });
 </script>
 <!-- popup js ends here -->
@@ -136,7 +150,7 @@ $(document).ready(function() {
 	<!-- groupname_header starts from here -->
 	<div class="groupname_header"> 
     	<a href="dashboard.html">
-    	<div class="arrow"> <img src="images/arrow.png"></div>
+    	<div class="arrow"> <img src="images/arrow.png"> </div>
         </a>
         
     	Add Asset
@@ -214,7 +228,7 @@ $(document).ready(function() {
                 <input name="numb" type="text" class="txt_box10" placeholder="S/N">
                 </div>
                 
-                <input name="purchasedate" type="text" class="txt_box11" placeholder="Date of Purchase">
+                <input type="text" id="datepicker" placeholder="Date of Purchase">
             
             	<input name="choosefile" class="addphotos" type="file" value="Add Photos">
             </form>

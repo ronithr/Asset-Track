@@ -2,24 +2,24 @@
 /* fonts starts from here */
 @font-face {
     font-family: 'bakersfieldbold';
-    src: url('Bakersfield Bold-webfont.eot');
-    src: url('Bakersfield Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Bakersfield Bold-webfont.woff2') format('woff2'),
-         url('Bakersfield Bold-webfont.woff') format('woff'),
-         url('Bakersfield Bold-webfont.ttf') format('truetype'),
-         url('Bakersfield Bold-webfont.svg#bakersfieldbold') format('svg');
+    src: url(fonts/'Bakersfield Bold-webfont.eot');
+    src: url(fonts/'Bakersfield Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url(fonts/'Bakersfield Bold-webfont.woff2') format('woff2'),
+         url(fonts/'Bakersfield Bold-webfont.woff') format('woff'),
+         url(fonts/'Bakersfield Bold-webfont.ttf') format('truetype'),
+         url(fonts/'Bakersfield Bold-webfont.svg#bakersfieldbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'bakersfieldlight';
-    src: url('Bakersfield Light-webfont.eot');
-    src: url('Bakersfield Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Bakersfield Light-webfont.woff2') format('woff2'),
-         url('Bakersfield Light-webfont.woff') format('woff'),
-         url('Bakersfield Light-webfont.ttf') format('truetype'),
-         url('Bakersfield Light-webfont.svg#bakersfieldlight') format('svg');
+    src: url(fonts/'Bakersfield Light-webfont.eot');
+    src: url(fonts/'Bakersfield Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url(fonts/'Bakersfield Light-webfont.woff2') format('woff2'),
+         url(fonts/'Bakersfield Light-webfont.woff') format('woff'),
+         urlfonts/('Bakersfield Light-webfont.ttf') format('truetype'),
+         url(fonts/'Bakersfield Light-webfont.svg#bakersfieldlight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -587,9 +587,11 @@ img, object, embed, video {
 	padding-bottom: 1%;
 	font-family:Bakersfield;
 	font-size: 15px;
+	font-weight:bold;
 	height: 55px;
 	border-radius:3px;
 	border:none;
+	-webkit-appearance:none;
 }
 .txt_box9 {
 	float:left;
@@ -629,7 +631,7 @@ img, object, embed, video {
 	border-radius:3px;
 	border:none;
 }
-.txt_box11 {
+#datepicker {
 	float:left;
 	width: 80%;
 	margin-top: 0%;
@@ -676,9 +678,9 @@ img, object, embed, video {
 	margin-left: 0%;
 	background-color:#2b445a;
 	color: #59606b;
-	background-image:url(../images/calmera.png);
+	background-image:url(../images/camera.png);
 	background-repeat:no-repeat;
-	background-position: 65% 50%;
+	background-position: 70% 50%;
 	font-family:Bakersfield;
 	font-size: 15px;
 	height: 52px;
@@ -1329,9 +1331,11 @@ img, object, embed, video {
 	padding-bottom: 1%;
 	font-family:Bakersfield;
 	font-size: 15px;
+	font-weight:bold;
 	height: 55px;
 	border-radius:3px;
 	border:none;
+	-webkit-appearance:none;
 }
 .txt_box9 {
 	float:left;
@@ -1371,7 +1375,7 @@ img, object, embed, video {
 	border-radius:3px;
 	border:none;
 }
-.txt_box11 {
+#datepicker {
 	float:left;
 	width: 80%;
 	margin-top: 0%;
@@ -2099,6 +2103,7 @@ img, object, embed, video {
 	height: 60px;
 	border-radius:3px;
 	border:none;
+	-webkit-appearance:none;
 }
 .txt_box9 {
 	float:left;
@@ -2140,7 +2145,7 @@ img, object, embed, video {
 	border-radius:3px;
 	border:none;
 }
-.txt_box11 {
+#datepicker {
 	float:left;
 	width: 80%;
 	margin-top: 0%;
@@ -2199,6 +2204,7 @@ img, object, embed, video {
 	border-radius:3px;
 	border:none;
 	text-align:center;
+
 }
 .addgrp {
 	float:left;
