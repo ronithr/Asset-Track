@@ -1,7 +1,5 @@
 <!doctype html>
-
-<html class="">
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +13,6 @@
     <script src="js/1.7.2jquery.min.js"></script>
     <!-- Load jQuery and the validate plugin -->
     <script src="js/jquery.validate.js"></script>
-    <script src="js/xui-2.3.2.js"></script>
     <script src="js/MicrosoftAjax.js"></script>
     <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
     <!-- jQuery Form Validation code -->
@@ -51,8 +48,27 @@
                 }
             });
             function fail(result) {
-                debugger;
-                alert("fail" + result);
+
+                try {
+                    var response = JSON.parse(result.toString());
+                    if (response.requestState) {
+                        $("#signInError").hide();
+                        if (typeof (Storage) != "undefined") {
+
+                        } else {
+                            localStorage.setItem("userName", $("#email").val());
+                            localStorage.setItem("password", $("#password").val());
+                            window.location = "dashboard.html";
+                        }
+
+                    }
+                    else {
+                        $("#signInError").show();
+                    }
+                }
+                catch (e) {
+
+                }
             }
             function sucess(result) {
                 debugger;
@@ -60,31 +76,10 @@
             }
             $("#btnSignIn").click(function () {
                 $("#signInError").hide();
-
                 if ($("form").valid()) {
                     debugger;
                     var svc = new AssetsTackService();
-                    svc.ValidateLogin("star\harish", "hari@4321", sucess, fail);//AssetsTackService.ValidateLogin("star\harish", "hari@4321")
-                    /*
-					var url = "http://192.168.2.13:8010/Services/AssetsTackService.svc/ValidateLogin";
-                    x$.data = {
-                        userName: "star\harish",
-                        password: "hari@4321"
-                    };
-                    x$("#btnSignIn").xhr(url, {
-                        error: function () { alert("failed" + this.responseText) },
-                        callback: function () {
-                            debugger;
-                            var jsonResponse = eval("(" + this.responseText + ")");
-                            var resultStr = jsonResponse.results;
-                            if (resultStr.length > 0) {
-                                $("#signInError").show();
-                                x$("#signInError").html(resultStr[0].text);
-                            }
-                        }
-                    });//end of xhr
-					*/
-                    ////window.location = "dashboard.html";
+                    svc.ValidateLogin($("#email").val(), $("#password").val(), sucess, fail);
                 }
             });
         });
@@ -110,10 +105,10 @@
         <form>
             <div class="emailbox">
                 <div class="email">
-                    <input name="email" type="text" class="txt_box1" placeholder="Username">
+                    <input id="email" name="email" type="text" class="txt_box1" placeholder="Username">
                 </div>
                 <div class="password">
-                    <input name="password" type="password" class="txt_box2" placeholder="Password">
+                    <input id="password" name="password" type="password" class="txt_box2" placeholder="Password">
                 </div>
                 <label id="signInError" class="service-error" style="display: none">* The user name or password provided is incorrect.</label>
                 <input id="btnSignIn" type="button" class="signinbox" value="Sign in">
