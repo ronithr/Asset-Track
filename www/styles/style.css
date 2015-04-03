@@ -2479,3 +2479,11 @@ font-size: 16px;
 font-family: bakersfield;
 font-weight: bold;
 }
+
+label.service-error {
+color: #8e3747;
+padding-left: 10px;
+font-size: 16px;
+font-family: bakersfield;
+font-weight: bold;
+}

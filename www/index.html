@@ -3,25 +3,28 @@
 <html class="">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Asset Track</title>
-<link rel="shortcut icon" href="images/icon.png">
-<link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
-<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asset Track</title>
+    <link rel="shortcut icon" href="images/icon.png">
+    <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
 
-<script src="js/respond.min.js"></script>
+    <script src="js/respond.min.js"></script>
 
-<script src="js/1.7.2jquery.min.js"></script>
-  <!-- Load jQuery and the validate plugin -->
-<script src="js/jquery.validate.js"></script>
-  <!-- jQuery Form Validation code -->
-<script>
-  
-  // When the browser is ready...
-  $(function() {
-    // Setup form validation on the #register-form element
-     $("form").validate({
+    <script src="js/1.7.2jquery.min.js"></script>
+    <!-- Load jQuery and the validate plugin -->
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/xui-2.3.2.js"></script>
+    <script src="js/MicrosoftAjax.js"></script>
+    <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
+    <!-- jQuery Form Validation code -->
+    <script>
+
+        // When the browser is ready...
+        $(function () {
+            // Setup form validation on the #register-form element
+            $("form").validate({
                 // Specify the validation rules
                 rules: {
                     email: {
@@ -40,58 +43,87 @@
                         required: "Please enter username"
 
                     },
-                      password: "Please enter password"
-               },
+                    password: "Please enter password"
+                },
 
                 submitHandler: function (form) {
                     form.submit();
                 }
             });
-           
-$("#btnSignIn").click(function () {
-              if ($("form").valid())
-				{
-				window.location ="dashboard.html";
-				}
+            function fail(result) {
+                debugger;
+                alert(result);
+            }
+            function sucess(result) {
+                debugger;
+                alert(result);
+            }
+            $("#btnSignIn").click(function () {
+                $("#signInError").hide();
+
+                if ($("form").valid()) {
+                    debugger;
+                    //var svc = new AssetsTackService();
+                    //var result = svc.ValidateLogin("star\harish", "hari@4321", sucess, fail);//AssetsTackService.ValidateLogin("star\harish", "hari@4321")
+                    var url = "http://192.168.2.13:8010/Services/AssetsTackService.svc/ValidateLogin";
+                    x$.data = {
+                        userName: "star\harish",
+                        password: "hari@4321"
+                    };
+                    x$("#btnSignIn").xhr(url, {
+                        error: function () { alert("failed" + this.responseText) },
+                        callback: function () {
+                            debugger;
+                            var jsonResponse = eval("(" + this.responseText + ")");
+                            var resultStr = jsonResponse.results;
+                            if (resultStr.length > 0) {
+                                $("#signInError").show();
+                                x$("#signInError").html(resultStr[0].text);
+                            }
+                        }
+                    });//end of xhr
+                    ////window.location = "dashboard.html";
+                }
             });
-  });
-  
-  </script>
+        });
+    </script>
 
 </head>
-<body style="background-color:#1d1d23">
+<body style="background-color: #1d1d23">
 
-<!-- gridcontainer clearfix starts from here -->
-<div class="gridContainer clearfix">
+    <!-- gridcontainer clearfix starts from here -->
+    <div class="gridContainer clearfix">
 
-	<div class="logo" align="center">
-    	<img src="images/logo.png">
-    </div>
-    <div class="line" align="center"><img src="images/sep.png" width="90%"></div>
-    
-    <div class="logo2">
-    	<img src="images/logo2.png">
-    </div>
-    
-    <form >
-        <div class="emailbox">
-            <div class="email">
-            <input name="email" type="text" class="txt_box1" placeholder="Username">    
-            </div>
-            <div class="password">
-            <input name="password" type="password" class="txt_box2" placeholder="Password">
-            </div>
-            
-          <input id="btnSignIn" type="button" class="signinbox" value="Sign in">
+        <div class="logo" align="center">
+            <img src="images/logo.png">
         </div>
-    </form>
-    
-    <div class="footer">
-          <div class="forgot">Forgot password?</div>
-          <div class="newhere">New here? <a href="signup.html"><span style="color:#03bdd9"><u>Sign Up</u></span></a></div>
-    </div>    
+        <div class="line" align="center">
+            <img src="images/sep.png" width="90%">
+        </div>
 
-</div>
-<!-- gridcontainer clearfix ends here -->
+        <div class="logo2">
+            <img src="images/logo2.png">
+        </div>
+
+        <form>
+            <div class="emailbox">
+                <div class="email">
+                    <input name="email" type="text" class="txt_box1" placeholder="Username">
+                </div>
+                <div class="password">
+                    <input name="password" type="password" class="txt_box2" placeholder="Password">
+                </div>
+                <label id="signInError" class="service-error" style="display: none">* The user name or password provided is incorrect.</label>
+                <input id="btnSignIn" type="button" class="signinbox" value="Sign in">
+            </div>
+        </form>
+
+        <div class="footer">
+            <div class="forgot">Forgot password?</div>
+            <div class="newhere">New here? <a href="signup.html"><span style="color: #03bdd9"><u>Sign Up</u></span></a></div>
+        </div>
+
+    </div>
+    <!-- gridcontainer clearfix ends here -->
 </body>
 </html>
