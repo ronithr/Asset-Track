@@ -49,7 +49,10 @@
             });
             function fail(result) {
 
-                try {
+              alert("fail" + result);
+            }
+            function sucess(result) {
+				  try {
                     var response = JSON.parse(result.toString());
                     if (response.requestState) {
                         $("#signInError").hide();
@@ -69,10 +72,7 @@
                 catch (e) {
 
                 }
-            }
-            function sucess(result) {
-                debugger;
-                alert("Sucess" + result);
+                
             }
             $("#btnSignIn").click(function () {
                 $("#signInError").hide();
