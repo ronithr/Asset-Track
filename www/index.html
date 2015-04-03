@@ -20,6 +20,11 @@
 
         // When the browser is ready...
         $(function () {
+			try{
+				alert(typeof (Storage));
+				}
+				catch(e){
+				}
             // Setup form validation on the #register-form element
             $("form").validate({
                 // Specify the validation rules
@@ -56,14 +61,16 @@
                     var response = JSON.parse(result.toString());
                     if (response.requestState) {
                         $("#signInError").hide();
-						
+						/*
                         if (typeof (Storage) != "undefined") {
 
                         } else {
-                            localStorage.setItem("userName", $("#email").val());
-                            localStorage.setItem("password", $("#password").val());
-                            window.location = "dashboard.html";
+                            
                         }
+						*/
+						//localStorage.setItem("userName", $("#email").val());
+                        //localStorage.setItem("password", $("#password").val());
+                        window.location = "dashboard.html";
 
                     }
                     else {
@@ -77,7 +84,7 @@
             }
             $("#btnSignIn").click(function () {
                 $("#signInError").hide();
-				alert(typeof (Storage));
+				
                 if ($("form").valid()) {
                     debugger;
                     var svc = new AssetsTackService();
