@@ -36,7 +36,7 @@
                 }
                 $("#groupList").html(htmlData);
                 $(".group-item").click(function () {
-                    window.location = "myassets.html?groupID=$(this).attr('group-id')&groupName=$(this).attr('group-name')";
+                    window.location = "myassets.html?groupID="+$(this).attr('group-id')+"&groupName="+$(this).attr('group-name');
                 });
             }
             else {
