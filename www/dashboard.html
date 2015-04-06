@@ -1,92 +1,147 @@
 <!doctype html>
-
 <html class="">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Asset Track </title>
-<link rel="shortcut icon" href="images/icon.png">
-<link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
-<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asset Track </title>
+    <link rel="shortcut icon" href="images/icon.png">
+    <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script src="js/1.7.2jquery.min.js"></script>
+    <script src="styles/respond.min.js"></script>
+    <script src="js/MicrosoftAjax.js"></script>
+    <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
+    <script>
+        function fail(result) {
 
+            try {
+                alert("fail" + result);
+            }
+            catch (e) {
 
-<script src="styles/respond.min.js"></script>
+            }
+        }
+        function success(result) {
+            debugger;
+            var htmlData = '';
+            var response = JSON.parse(result.toString());
 
+            if (response.requestState) {
+                var groupData = JSON.parse(response.result.toString());
+                for (var i = 0; i < groupData.length; i++) {
+                    htmlData += '<div class="contentbox2 group-item" group-id="' + groupData[i].ID + '" group-name="' + groupData[i].AssetsGroupName + '" ><div class="groupname"><b>' + groupData[i].AssetsGroupName + '</b></div><div class="content_numberbox">' + '</div></div>';
+                }
+                $("#groupList").html(htmlData);
+                $(".group-item").click(function () {
+                    window.location = "myassets.html?ID=$(this).attr('group-id')&groupName=$(this).attr('group-name')";
+                });
+            }
+            else {
+                alert(response.result.toString());
+            }
+        }
+        $(function () {
+            debugger;
+            var svc = new AssetsTackService();
+            svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
+        });
+    </script>
 </head>
-<body style="background-color:#1d1d23">
-<!-- gridcontainer clearfix starts from here -->
-<div class="gridContainer clearfix">
+<body style="background-color: #1d1d23">
+    <!-- gridcontainer clearfix starts from here -->
+    <div class="gridContainer clearfix">
 
-	<!-- dashboard_header starts from here -->
-	<div class="dashboard_header"> 
-    	<b> Dashboard </b>
-        <div class="header_btns">        
-            <div class="menu_icon"> <img src="images/power.png"> </div>
-            <div class="menu_icon"> <img src="images/menu.png"> </div>
+        <!-- dashboard_header starts from here -->
+        <div class="dashboard_header">
+            <b>Dashboard </b>
+            <div class="header_btns">
+                <div class="menu_icon">
+                    <img src="images/power.png">
+                </div>
+                <div class="menu_icon">
+                    <img src="images/menu.png">
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- dashboard header ends here -->
-    
-    <!-- menu starts from here -->
-    <div class="menu">
-    	<a href="dashboard.html">
-    	<div class="menu_btn1">
-        	<img src="images/dashboard.png"> <br><br> <span style="color:#FFF">Dashboard</span>
+        <!-- dashboard header ends here -->
+
+        <!-- menu starts from here -->
+        <div class="menu">
+            <a href="dashboard.html">
+                <div class="menu_btn1">
+                    <img src="images/dashboard.png">
+                    <br>
+                    <br>
+                    <span style="color: #FFF">Dashboard</span>
+                </div>
+            </a>
+
+            <a href="myassets.html">
+                <div class="menu_btn2">
+                    <img src="images/assets.png">
+                    <br>
+                    <br>
+                    My Assets
+                </div>
+            </a>
+
+            <a href="searchassets.html">
+                <div class="menu_btn3">
+                    <img src="images/search.png">
+                    <br>
+                    <br>
+                    Search Assets
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="menu_btn4">
+                    <img src="images/import.png">
+                    <br>
+                    <br>
+                    Import/Export
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="menu_btn5">
+                    <img src="images/manage.png">
+                    <br>
+                    <br>
+                    Manage Users
+                </div>
+            </a>
+
         </div>
-        </a>
-        
-        <a href="myassets.html">
-        <div class="menu_btn2">
-        	<img src="images/assets.png"> <br><br> My Assets
+        <!-- menu ends here -->
+
+        <!-- content box starts from here -->
+        <div id="groupList">
+            <!-- <div class="contentbox2">
+                <div class="groupname"><b>Group Name</b></div>
+                <div class="content_numberbox">100</div>
+            </div>
+            <div class="contentbox2">
+                <div class="groupname"><b>Group Name</b> </div>
+                <div class="content_numberbox">99</div>
+            </div>
+            <div class="contentbox2">
+                <div class="groupname"><b>Group Name</b> </div>
+                <div class="content_numberbox">7</div>
+            </div>-->
         </div>
-        </a>
-        
-        <a href="searchassets.html">
-        <div class="menu_btn3">
-        	<img src="images/search.png"> <br><br> Search Assets
-        </div>
-        </a>
-        
-        <a href="addasset.html">
-        <div class="menu_btn4">
-        	<img src="images/import.png"> <br><br> Import/Export
-        </div>
-        </a>
-        
-        <a href="#">
-        <div class="menu_btn5">
-        	<img src="images/manage.png"> <br><br> Manage Users
-        </div>
-        </a>
-        
-    </div>
-	<!-- menu ends here -->
-    
-    <!-- content box starts from here -->
-    <div class="contentbox1">
-    	<div class="groupname"> <b>Group Name</b> </div>
-        <div class="content_numberbox"> 100</div>
-    </div>
-    <div class="contentbox2">
-    	<div class="groupname"> <b>Group Name</b> </div>
-        <div class="content_numberbox"> 99</div>
-    </div>
-    <div class="contentbox2">
-    	<div class="groupname"> <b>Group Name</b> </div> 
-        <div class="content_numberbox"> 7</div>
-    </div>
-    <div class="bin_place">
+        <!--  <div class="bin_place">
     	<img src="images/bin.png">  &nbsp;|&nbsp; 
         <img src="images/pen.png">
     </div>
     <div class="contentbox4">
     	<b>Group Name</b>
     </div>
- 
-    <!-- content box ends here -->
+ -->
+        <!-- content box ends here -->
 
-</div>
-<!-- gridcontainer clearfix ends here -->
+    </div>
+    <!-- gridcontainer clearfix ends here -->
 </body>
 </html>

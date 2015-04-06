@@ -7,9 +7,7 @@
     <link rel="shortcut icon" href="images/icon.png">
     <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
-
     <script src="js/respond.min.js"></script>
-
     <script src="js/1.7.2jquery.min.js"></script>
     <!-- Load jQuery and the validate plugin -->
     <script src="js/jquery.validate.js"></script>
@@ -20,7 +18,6 @@
 
         // When the browser is ready...
         $(function () {
-			
             // Setup form validation on the #register-form element
             $("form").validate({
                 // Specify the validation rules
@@ -50,41 +47,33 @@
             });
             function fail(result) {
 
-              alert("fail" + result);
-            }
-            function sucess(result) {
-				  try {
-                    var response = JSON.parse(result.toString());
-                    if (response.requestState) {
-                        $("#signInError").hide();
-						/*
-                        if (typeof (Storage) != "undefined") {
-
-                        } else {
-                            
-                        }
-						*/
-						//localStorage.setItem("userName", $("#email").val());
-                        //localStorage.setItem("password", $("#password").val());
-                        window.location = "dashboard.html";
-
-                    }
-                    else {
-                        $("#signInError").show();
-                    }
+                try {
+                    alert("fail" + result);
                 }
                 catch (e) {
 
                 }
-                
+            }
+            function success(result) {
+                debugger;
+
+                var response = JSON.parse(result.toString());
+                if (response.requestState) {
+                    $("#signInError").hide();
+                    //localStorage.setItem("AssetUserName", $("#email").val());
+                    //localStorage.setItem("AssetPassword", $("#password").val());
+                    window.location = "dashboard.html";
+                }
+                else {
+                    $("#signInError").show();
+                }
             }
             $("#btnSignIn").click(function () {
                 $("#signInError").hide();
-				
                 if ($("form").valid()) {
                     debugger;
                     var svc = new AssetsTackService();
-                    svc.ValidateLogin($("#email").val(), $("#password").val(), sucess, fail);
+                    svc.ValidateLogin($("#email").val(), $("#password").val(), success, fail);
                 }
             });
         });
