@@ -30,11 +30,13 @@
             if (response.requestState) {
                 var groupData = JSON.parse(response.result.toString());
                 for (var i = 0; i < groupData.length; i++) {
-                    htmlData += '<div class="contentbox2 group-item" group-id="' + groupData[i].ID + '" group-name="' + groupData[i].AssetsGroupName + '" ><div class="groupname"><b>' + groupData[i].AssetsGroupName + '</b></div><div class="content_numberbox">' + '</div></div>';
+                    htmlData += '<div class="contentbox2 group-item" group-id="' + groupData[i].ID + '" group-name="' +
+                        groupData[i].AssetsGroupName + '" ><div class="groupname"><b>' + groupData[i].AssetsGroupName
+                        + '</b></div><div class="content_numberbox">' + '</div></div>';
                 }
                 $("#groupList").html(htmlData);
                 $(".group-item").click(function () {
-                    window.location = "myassets.html?ID=$(this).attr('group-id')&groupName=$(this).attr('group-name')";
+                    window.location = "myassets.html?groupID=$(this).attr('group-id')&groupName=$(this).attr('group-name')";
                 });
             }
             else {
