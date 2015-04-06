@@ -35,7 +35,7 @@
             var response = JSON.parse(result.toString());
             if (response.requestState) {
                 var assetsData = JSON.parse(response.result.toString());
-                for (var i = 0; i < groupData.length; i++) {
+                for (var i = 0; i < assetsData.length; i++) {
 
                     htmlData += '<div class="contentbox1 assets-item" assets-id="' + assetsData[i].ID + '" assets-name="'
                         + assetsData[i].AssetsName + '"><div class="groupname"><b>' + assetsData[i].AssetsName
@@ -51,7 +51,6 @@
             }
         }
         $(function () {
-            debugger;
             var svc = new AssetsTackService();
             var groupID = getParameterByName('groupID');
             if (groupID == undefined || groupID == '') {
@@ -91,7 +90,6 @@
             </div>
         </div>
         <!-- groupname_header ends here -->
-
         <!-- menu starts from here -->
         <div class="menu">
             <a href="dashboard.html">
@@ -144,14 +142,12 @@
 
         <!-- content box starts from here -->
         <div id="assetsList">
-
             <!--<div class="contentbox1">
                 <div class="groupname"><b>Asset Name</b> </div>
                 <div class="grp_name_box">
                 <img src="images/green_arrow_up.png">
                 </div>
             </div>-->
-
         </div>
         <!-- content box ends here -->
     </div>
