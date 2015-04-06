@@ -19,11 +19,11 @@
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
         $(function () {
-            $("#assets-name").html(getParameterByName('AssetsName'));
-            $("#assets-Group").html(getParameterByName('AssetGroup'));
-            $("#assets-PurchaseDate").html(getParameterByName('AssetPurchaseDate'));
-            $("#assets-PurchaseValue").html(getParameterByName('AssetPurchaseValue'));
-            $("#assets-SerialNumber").html(getParameterByName('AssetSerialNumber'));
+            $(".assets-name").html(getParameterByName('AssetsName'));
+            $(".assets-Group").html(getParameterByName('AssetGroup'));
+            $(".assets-PurchaseDate").html(getParameterByName('AssetPurchaseDate'));
+            $(".assets-PurchaseValue").html(getParameterByName('AssetPurchaseValue'));
+            $(".assets-SerialNumber").html(getParameterByName('AssetSerialNumber'));
         });
 
         function goBack() {
