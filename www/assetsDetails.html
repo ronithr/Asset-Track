@@ -1,7 +1,5 @@
-<!doctype html>
-
+﻿<!doctype html>
 <html class="">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,62 +12,25 @@
     <script src="js/MicrosoftAjax.js"></script>
     <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
     <script>
-        var assetsData;
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                 results = regex.exec(location.search);
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
-        function fail(result) {
-
-            try {
-                alert("fail" + result);
-            }
-            catch (e) {
-
-            }
-        }
-        function success(result) {
-            debugger;
-            var htmlData = '';
-            var response = JSON.parse(result.toString());
-            if (response.requestState) {
-                assetsData = JSON.parse(response.result.toString());
-                for (var i = 0; i < assetsData.length; i++) {
-
-                    htmlData += '<div class="contentbox1 assets-item" assets-index="' + i + '" assets-id="' + assetsData[i].ID + '" assets-name="'
-                        + assetsData[i].AssetsName + '"><div class="groupname"><b>' + assetsData[i].AssetsName
-                        + '</b> </div><div class="grp_name_box"><img src="images/green_arrow_up.png"></div></div>';
-                }
-                $("#assetsList").html(htmlData);
-                $(".assets-item").click(function () {
-                    var index = Number($(this).attr('assets-index'));
-                    window.location = "assetsDetails.html?ID=" + assetsData[index].ID + "&AssetsName=" + assetsData[index].AssetsName +
-                        "&AssetGroup=" + AssetGroup[index].ID + "&AssetPurchaseDate=" + assetsData[index].AssetPurchaseDate + "&AssetPurchaseValue=" + assetsData[index].AssetPurchaseValue
-                    + "&AssetSerialNumber=" + assetsData[index].AssetSerialNumber;
-                });
-            }
-            else {
-                alert(response.result.toString());
-            }
-        }
         $(function () {
-            var svc = new AssetsTackService();
-            var groupID = getParameterByName('groupID');
-            if (groupID == undefined || groupID == '') {
-                groupID = '';
-            }
-            var groupName = getParameterByName('groupName');
-            if (groupName == undefined || groupName == '') {
-                groupName = '';
-            }
-            $('#groupHeader').html(groupName);
-            svc.GetAssetsByGroup('harish', 'hari@4321', groupID, success, fail);
+            $("#assets-name").html(getParameterByName('AssetsName'));
+            $("#assets-Group").html(getParameterByName('AssetGroup'));
+            $("#assets-PurchaseDate").html(getParameterByName('AssetPurchaseDate'));
+            $("#assets-PurchaseValue").html(getParameterByName('AssetPurchaseValue'));
+            $("#assets-SerialNumber").html(getParameterByName('AssetSerialNumber'));
         });
+
+        function goBack() {
+            window.history.back();
+        }
     </script>
 </head>
-
 <body style="background-color: #1d1d23">
     <!-- gridcontainer clearfix starts from here -->
     <div class="gridContainer clearfix">
@@ -77,13 +38,13 @@
         <!-- groupname_header starts from here -->
         <div class="groupname_header">
 
-            <a href="dashboard.html">
+            <span onclick="goBack()">
                 <div class="arrow">
                     <img src="images/arrow.png">
                 </div>
-            </a>
+            </span>
 
-            <b id="groupHeader"></b>
+            <b class="assets-name"></b>
             <div class="header_btns">
                 <div class="menu_icon">
                     <img src="images/power.png">
@@ -143,16 +104,35 @@
 
         </div>
         <!-- menu ends here -->
-
         <!-- content box starts from here -->
         <div id="assetsList">
-            <!--<div class="contentbox1">
+            <div class="contentbox1">
                 <div class="groupname"><b>Asset Name</b> </div>
-                <div class="grp_name_box">
-                <img src="images/green_arrow_up.png">
+                <div class="grp_name_box assets-name">
                 </div>
-            </div>-->
+            </div>
+            <div class="contentbox1">
+                <div class="groupname"><b>Asset Group</b> </div>
+                <div class="grp_name_box assets-Group">
+                </div>
+            </div>
+            <div class="contentbox1">
+                <div class="groupname"><b>Asset Purchase Date</b> </div>
+                <div class="grp_name_box assets-PurchaseDate">
+                </div>
+            </div>
+            <div class="contentbox1">
+                <div class="groupname"><b>Asset Purchase Value</b> </div>
+                <div class="grp_name_box assets-PurchaseValue">
+                </div>
+            </div>
+            <div class="contentbox1">
+                <div class="groupname"><b>Asset Serial Number</b> </div>
+                <div class="grp_name_box assets-SerialNumber">
+                </div>
+            </div>
         </div>
+
         <!-- content box ends here -->
     </div>
     <!-- gridcontainer clearfix ends here -->
