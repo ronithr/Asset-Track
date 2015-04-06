@@ -46,7 +46,7 @@
                 $(".assets-item").click(function () {
                     var index = Number($(this).attr('assets-index'));
                     window.location = "assetsDetails.html?ID=" + assetsData[index].ID + "&AssetsName=" + assetsData[index].AssetsName +
-                        "&AssetGroup=" + AssetGroup[index].ID + "&AssetPurchaseDate=" + assetsData[index].AssetPurchaseDate + "&AssetPurchaseValue=" + assetsData[index].AssetPurchaseValue
+                        "&AssetGroup=" + assetsData[index].ID + "&AssetPurchaseDate=" + assetsData[index].AssetPurchaseDate + "&AssetPurchaseValue=" + assetsData[index].AssetPurchaseValue
                     + "&AssetSerialNumber=" + assetsData[index].AssetSerialNumber;
                 });
             }
